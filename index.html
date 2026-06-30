@@ -1,30 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Rocket & Luna $5,000 Savings Challenge</title>
 
-    <title>Rocket & Luna $5,000 Savings Challenge</title>
+  <link rel="apple-touch-icon" href="apple-touch-icon.PNG">
+  <link rel="icon" type="image/png" href="apple-touch-icon.PNG">
+  <link rel="manifest" href="manifest.json">
 
-    <!-- iPhone Home Screen Icon -->
-    <link rel="apple-touch-icon" href="apple-touch-icon.PNG">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Savings">
+  <meta name="theme-color" content="#0627c9">
 
-    <!-- Browser Tab Icon -->
-    <link rel="icon" type="image/png" href="apple-touch-icon.PNG">
-
-    <!-- PWA Manifest -->
-    <link rel="manifest" href="manifest.json">
-
-    <!-- iPhone Full Screen -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Savings">
-
-    <!-- Theme Color -->
-    <meta name="theme-color" content="#0a36c8">
-
-    <style>
+  <style>
     * { box-sizing: border-box; }
 
     body {
@@ -38,29 +28,26 @@
       background: #0627c9;
       color: white;
       text-align: center;
-      padding: 30px 15px;
+      padding: 35px 15px;
       border-bottom-left-radius: 35px;
       border-bottom-right-radius: 35px;
     }
 
     header h1 {
       margin: 0;
-      font-size: 32px;
-      line-height: 1.1;
+      font-size: 31px;
+      line-height: 1.15;
     }
 
     header p {
-      margin: 10px 0 0;
+      margin: 12px 0 0;
       font-size: 18px;
       color: #ffd3e8;
     }
 
     .dog-row {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      font-size: 54px;
-      margin-top: 15px;
+      font-size: 52px;
+      margin-top: 14px;
     }
 
     .container {
@@ -71,10 +58,10 @@
 
     .card {
       background: white;
-      border-radius: 22px;
-      padding: 18px;
+      border-radius: 24px;
+      padding: 20px;
       margin-bottom: 18px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.10);
     }
 
     .total {
@@ -84,15 +71,15 @@
     .total h2 {
       margin: 0;
       color: #ff4fa3;
-      font-size: 44px;
+      font-size: 46px;
     }
 
     .progress-wrap {
       background: #e3e7ff;
-      height: 24px;
+      height: 26px;
       border-radius: 20px;
       overflow: hidden;
-      margin: 15px 0;
+      margin: 16px 0;
     }
 
     .progress-bar {
@@ -102,16 +89,13 @@
       transition: 0.3s;
     }
 
-    select, button, input {
+    button {
       width: 100%;
       padding: 14px;
       border-radius: 14px;
       border: 2px solid #0627c9;
       font-size: 17px;
       margin-top: 10px;
-    }
-
-    button {
       background: #0627c9;
       color: white;
       font-weight: bold;
@@ -151,8 +135,8 @@
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid #eee;
-      padding: 12px 0;
-      font-size: 18px;
+      padding: 14px 0;
+      font-size: 20px;
     }
 
     .done {
@@ -162,29 +146,23 @@
 
     .message {
       text-align: center;
-      font-size: 22px;
+      font-size: 23px;
       color: #ff4fa3;
       font-weight: bold;
-      min-height: 55px;
-    }
-
-    .leaderboard div {
-      display: flex;
-      justify-content: space-between;
-      padding: 10px 0;
-      font-size: 18px;
-      border-bottom: 1px solid #eee;
+      min-height: 60px;
+      line-height: 1.3;
     }
 
     footer {
       text-align: center;
       background: #0627c9;
       color: white;
-      padding: 25px;
-      margin-top: 20px;
-      border-top-left-radius: 30px;
-      border-top-right-radius: 30px;
-      font-size: 22px;
+      padding: 28px 18px;
+      margin-top: 24px;
+      border-top-left-radius: 34px;
+      border-top-right-radius: 34px;
+      font-size: 24px;
+      line-height: 1.4;
     }
   </style>
 </head>
@@ -194,25 +172,10 @@
 <header>
   <h1>Rocket & Luna<br>$5,000 Savings Challenge</h1>
   <p>Small steps today, big freedom tomorrow.</p>
-  <div class="dog-row">
-    <span>🐶</span>
-    <span>🐾</span>
-    <span>🐩</span>
-  </div>
+  <div class="dog-row">🐶 🐾 🐩</div>
 </header>
 
 <div class="container">
-
-  <div class="card">
-    <label><strong>Who is saving today?</strong></label>
-    <select id="memberSelect" onchange="changeMember()">
-      <option value="Dad">Dad</option>
-      <option value="Mom">Mom</option>
-      <option value="Sister">Sister</option>
-      <option value="Brother">Brother</option>
-      <option value="Auntie">Auntie</option>
-    </select>
-  </div>
 
   <div class="card total">
     <h3>Total Saved</h3>
@@ -237,31 +200,30 @@
 
   <div class="card">
     <h2>Milestones</h2>
-    <div class="milestone">
-      <span>🥉 $1,000</span><span id="m1000"></span>
-    </div>
-    <div class="milestone">
-      <span>🥈 $2,500</span><span id="m2500"></span>
-    </div>
-    <div class="milestone">
-      <span>🥇 $4,000</span><span id="m4000"></span>
-    </div>
-    <div class="milestone">
-      <span>🏆 $5,000</span><span id="m5000"></span>
-    </div>
-  </div>
 
-  <div class="card leaderboard">
-    <h2>Family Progress</h2>
-    <div><span>Dad</span><strong id="lbDad">$0</strong></div>
-    <div><span>Mom</span><strong id="lbMom">$0</strong></div>
-    <div><span>Sister</span><strong id="lbSister">$0</strong></div>
-    <div><span>Brother</span><strong id="lbBrother">$0</strong></div>
-    <div><span>Auntie</span><strong id="lbAuntie">$0</strong></div>
+    <div class="milestone">
+      <span>🥉 $1,000</span>
+      <span id="m1000"></span>
+    </div>
+
+    <div class="milestone">
+      <span>🥈 $2,500</span>
+      <span id="m2500"></span>
+    </div>
+
+    <div class="milestone">
+      <span>🥇 $4,000</span>
+      <span id="m4000"></span>
+    </div>
+
+    <div class="milestone">
+      <span>🏆 $5,000</span>
+      <span id="m5000"></span>
+    </div>
   </div>
 
   <div class="card">
-    <button class="pink" onclick="resetCurrent()">Reset Current Person</button>
+    <button class="pink" onclick="resetChallenge()">Reset My Challenge</button>
   </div>
 
 </div>
@@ -273,35 +235,28 @@
 
 <script>
   const goal = 5000;
-  const members = ["Dad", "Mom", "Sister", "Brother", "Auntie"];
-  let currentMember = localStorage.getItem("currentMember") || "Dad";
+  const storageKey = "rocketLunaPersonalSavingsChallenge";
 
   const amounts = [];
+
   for (let i = 0; i < 10; i++) {
     for (let amt = 10; amt <= 100; amt += 10) {
       amounts.push(amt);
     }
   }
 
-  document.getElementById("memberSelect").value = currentMember;
-
-  function getData(member) {
-    const saved = localStorage.getItem("rocketLuna_" + member);
+  function getData() {
+    const saved = localStorage.getItem(storageKey);
     return saved ? JSON.parse(saved) : [];
   }
 
-  function saveData(member, data) {
-    localStorage.setItem("rocketLuna_" + member, JSON.stringify(data));
-  }
-
-  function changeMember() {
-    currentMember = document.getElementById("memberSelect").value;
-    localStorage.setItem("currentMember", currentMember);
-    render();
+  function saveData(data) {
+    localStorage.setItem(storageKey, JSON.stringify(data));
   }
 
   function toggleAmount(index) {
-    let data = getData(currentMember);
+    let data = getData();
+
     if (data.includes(index)) {
       data = data.filter(i => i !== index);
       setCheer("No worries! Rocket & Luna are still cheering for you!");
@@ -310,7 +265,8 @@
       const amount = amounts[index];
       setCheer(randomCheer(amount));
     }
-    saveData(currentMember, data);
+
+    saveData(data);
     render();
   }
 
@@ -320,8 +276,12 @@
       `Luna says: You are amazing!`,
       `Rocket & Luna are so proud of you!`,
       `Another step closer to $5,000!`,
-      `Small steps today, big freedom tomorrow!`
+      `Small steps today, big freedom tomorrow!`,
+      `You did it! Another envelope saved!`,
+      `Luna says: Keep going, you’re doing great!`,
+      `Rocket says: That’s how champions save!`
     ];
+
     return cheers[Math.floor(Math.random() * cheers.length)];
   }
 
@@ -332,7 +292,8 @@
   function renderGrid() {
     const grid = document.getElementById("amountGrid");
     grid.innerHTML = "";
-    const data = getData(currentMember);
+
+    const data = getData();
 
     amounts.forEach((amount, index) => {
       const btn = document.createElement("button");
@@ -344,7 +305,7 @@
   }
 
   function renderTotals() {
-    const data = getData(currentMember);
+    const data = getData();
     const total = data.reduce((sum, index) => sum + amounts[index], 0);
     const percent = Math.min(Math.round((total / goal) * 100), 100);
     const remaining = Math.max(goal - total, 0);
@@ -360,18 +321,11 @@
     document.getElementById("m5000").innerHTML = total >= 5000 ? "<span class='done'>🎉 Complete</span>" : "";
   }
 
-  function renderLeaderboard() {
-    members.forEach(member => {
-      const data = getData(member);
-      const total = data.reduce((sum, index) => sum + amounts[index], 0);
-      document.getElementById("lb" + member).innerText = "$" + total.toLocaleString();
-    });
-  }
-
-  function resetCurrent() {
-    const confirmReset = confirm("Reset savings for " + currentMember + "?");
+  function resetChallenge() {
+    const confirmReset = confirm("Reset your savings challenge?");
     if (!confirmReset) return;
-    saveData(currentMember, []);
+
+    saveData([]);
     setCheer("Fresh start! Rocket & Luna are ready!");
     render();
   }
@@ -379,7 +333,6 @@
   function render() {
     renderGrid();
     renderTotals();
-    renderLeaderboard();
   }
 
   render();
