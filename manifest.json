@@ -1,0 +1,15 @@
+{
+  "name": "Rocket & Luna $5,000 Savings Challenge",
+  "short_name": "Savings",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0a36c8",
+  "icons": [
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ]
+}
