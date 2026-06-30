@@ -1,229 +1,399 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Rocket & Luna $5,000 Savings Challenge</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Rocket & Luna $5,000 Savings Challenge</title>
 
-  <link rel="apple-touch-icon" href="apple-touch-icon.PNG">
-  <link rel="icon" type="image/png" href="apple-touch-icon.PNG">
-  <link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="apple-touch-icon.PNG">
+<link rel="icon" type="image/png" href="apple-touch-icon.PNG">
+<link rel="manifest" href="manifest.json">
 
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Savings">
-  <meta name="theme-color" content="#0627c9">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Savings">
+<meta name="theme-color" content="#0627c9">
 
-  <style>
-    * { box-sizing: border-box; }
+<style>
+* { box-sizing: border-box; }
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #ffe4f1, #ffffff);
-      color: #0627a8;
-    }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #ffe3f1, #ffffff);
+  color: #0828a8;
+}
 
-    header {
-      background: #0627c9;
-      color: white;
-      text-align: center;
-      padding: 35px 15px;
-      border-bottom-left-radius: 35px;
-      border-bottom-right-radius: 35px;
-    }
+header {
+  background: linear-gradient(135deg, #0627c9, #ff4fa3);
+  color: white;
+  text-align: center;
+  padding: 34px 16px 28px;
+  border-bottom-left-radius: 34px;
+  border-bottom-right-radius: 34px;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 31px;
-      line-height: 1.15;
-    }
+header h1 {
+  margin: 0;
+  font-size: 30px;
+  line-height: 1.15;
+}
 
-    header p {
-      margin: 12px 0 0;
-      font-size: 18px;
-      color: #ffd3e8;
-    }
+header p {
+  margin: 12px 0 0;
+  font-size: 17px;
+}
 
-    .dog-row {
-      font-size: 52px;
-      margin-top: 14px;
-    }
+.pups {
+  font-size: 58px;
+  margin-top: 12px;
+}
 
-    .container {
-      padding: 18px;
-      max-width: 900px;
-      margin: auto;
-    }
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 18px;
+}
 
-    .card {
-      background: white;
-      border-radius: 24px;
-      padding: 20px;
-      margin-bottom: 18px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.10);
-    }
+.card {
+  background: white;
+  border-radius: 24px;
+  padding: 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
 
-    .total {
-      text-align: center;
-    }
+.setup {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(180deg, #0627c9, #ff4fa3);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 20px;
+}
 
-    .total h2 {
-      margin: 0;
-      color: #ff4fa3;
-      font-size: 46px;
-    }
+.setup-box {
+  background: white;
+  border-radius: 28px;
+  padding: 28px;
+  text-align: center;
+  max-width: 420px;
+  width: 100%;
+}
 
-    .progress-wrap {
-      background: #e3e7ff;
-      height: 26px;
-      border-radius: 20px;
-      overflow: hidden;
-      margin: 16px 0;
-    }
+.setup-box h2 {
+  color: #0627c9;
+  font-size: 28px;
+}
 
-    .progress-bar {
-      background: linear-gradient(90deg, #ff4fa3, #0627c9);
-      height: 100%;
-      width: 0%;
-      transition: 0.3s;
-    }
+input {
+  width: 100%;
+  padding: 16px;
+  border-radius: 16px;
+  border: 2px solid #0627c9;
+  font-size: 18px;
+  margin-top: 12px;
+}
 
-    button {
-      width: 100%;
-      padding: 14px;
-      border-radius: 14px;
-      border: 2px solid #0627c9;
-      font-size: 17px;
-      margin-top: 10px;
-      background: #0627c9;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-    }
+button {
+  border: none;
+  border-radius: 16px;
+  padding: 14px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-    button.pink {
-      background: #ff4fa3;
-      border-color: #ff4fa3;
-    }
+.primary {
+  width: 100%;
+  background: #0627c9;
+  color: white;
+  margin-top: 14px;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 10px;
-    }
+.pink {
+  width: 100%;
+  background: #ff4fa3;
+  color: white;
+}
 
-    .amount {
-      background: white;
-      color: #0627c9;
-      border: 2px solid #b8c0ff;
-      border-radius: 14px;
-      padding: 12px 5px;
-      font-weight: bold;
-      font-size: 17px;
-    }
+.total {
+  text-align: center;
+}
 
-    .amount.saved {
-      background: #ff4fa3;
-      color: white;
-      border-color: #ff4fa3;
-      text-decoration: line-through;
-    }
+.total h2 {
+  font-size: 48px;
+  color: #ff4fa3;
+  margin: 5px 0;
+}
 
-    .milestone {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #eee;
-      padding: 14px 0;
-      font-size: 20px;
-    }
+.progress-wrap {
+  background: #dfe5ff;
+  height: 28px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 16px 0;
+  position: relative;
+}
 
-    .done {
-      color: #ff4fa3;
-      font-weight: bold;
-    }
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ff4fa3, #0627c9);
+  transition: width .4s ease;
+}
 
-    .message {
-      text-align: center;
-      font-size: 23px;
-      color: #ff4fa3;
-      font-weight: bold;
-      min-height: 60px;
-      line-height: 1.3;
-    }
+.message {
+  text-align: center;
+  color: #ff4fa3;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 1.35;
+}
 
-    footer {
-      text-align: center;
-      background: #0627c9;
-      color: white;
-      padding: 28px 18px;
-      margin-top: 24px;
-      border-top-left-radius: 34px;
-      border-top-right-radius: 34px;
-      font-size: 24px;
-      line-height: 1.4;
-    }
-  </style>
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.tabs button {
+  flex: 1;
+  background: #e7ebff;
+  color: #0627c9;
+}
+
+.tabs button.active {
+  background: #0627c9;
+  color: white;
+}
+
+.envelope-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.envelope {
+  background: linear-gradient(180deg, #fff8fd, #ffd7ea);
+  border: 2px solid #ff9ccc;
+  color: #0627c9;
+  min-height: 78px;
+  border-radius: 18px;
+  font-size: 18px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.10);
+  position: relative;
+}
+
+.envelope span {
+  display: block;
+  font-size: 28px;
+}
+
+.envelope.saved {
+  background: linear-gradient(180deg, #ffeaa0, #ffc83d);
+  border-color: #d99b00;
+  color: #6b4700;
+  transform: scale(.97);
+}
+
+.envelope.saved::after {
+  content: "✔ Saved";
+  display: block;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.envelope:active {
+  transform: scale(.93) rotate(-2deg);
+}
+
+.milestone {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #eee;
+  padding: 14px 0;
+  font-size: 19px;
+}
+
+.done {
+  color: #ff4fa3;
+  font-weight: bold;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.stat {
+  background: #f4f6ff;
+  border-radius: 18px;
+  padding: 16px;
+  text-align: center;
+}
+
+.stat strong {
+  display: block;
+  color: #ff4fa3;
+  font-size: 24px;
+  margin-top: 6px;
+}
+
+.badges {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.badge {
+  background: #f4f6ff;
+  border-radius: 18px;
+  padding: 14px;
+  text-align: center;
+  opacity: .45;
+}
+
+.badge.unlocked {
+  opacity: 1;
+  background: #fff0f8;
+  border: 2px solid #ff4fa3;
+}
+
+.confetti {
+  position: fixed;
+  top: -10px;
+  width: 10px;
+  height: 10px;
+  animation: fall 1.7s linear forwards;
+  z-index: 1000;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+footer {
+  text-align: center;
+  background: #0627c9;
+  color: white;
+  padding: 28px 18px;
+  border-top-left-radius: 34px;
+  border-top-right-radius: 34px;
+  font-size: 22px;
+  line-height: 1.4;
+}
+
+@media (max-width: 430px) {
+  .envelope-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  header h1 {
+    font-size: 27px;
+  }
+}
+</style>
 </head>
 
 <body>
 
+<div class="setup" id="setupScreen">
+  <div class="setup-box">
+    <div class="pups">🐶 🐾 🐩</div>
+    <h2>Welcome!</h2>
+    <p>Rocket & Luna want to cheer you on.</p>
+    <input id="nameInput" placeholder="What’s your name?">
+    <button class="primary" onclick="saveName()">Start My Challenge</button>
+  </div>
+</div>
+
 <header>
   <h1>Rocket & Luna<br>$5,000 Savings Challenge</h1>
-  <p>Small steps today, big freedom tomorrow.</p>
-  <div class="dog-row">🐶 🐾 🐩</div>
+  <p id="welcomeText">Small steps today, big freedom tomorrow.</p>
+  <div class="pups">🐶 🐾 🐩</div>
 </header>
 
 <div class="container">
 
-  <div class="card total">
-    <h3>Total Saved</h3>
-    <h2 id="totalSaved">$0</h2>
-    <p id="percentText">0% of $5,000</p>
-    <div class="progress-wrap">
-      <div class="progress-bar" id="progressBar"></div>
-    </div>
-    <p id="remainingText">$5,000 left to go!</p>
+  <div class="tabs">
+    <button id="challengeTab" class="active" onclick="showPage('challenge')">Challenge</button>
+    <button id="statsTab" onclick="showPage('stats')">Stats</button>
   </div>
 
-  <div class="card">
-    <div class="message" id="cheerMessage">
-      Rocket & Luna believe in you!
+  <div id="challengePage">
+
+    <div class="card total">
+      <h3>Total Saved</h3>
+      <h2 id="totalSaved">$0</h2>
+      <p id="percentText">0% of $5,000</p>
+      <div class="progress-wrap">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+      <p id="remainingText">$5,000 left to go!</p>
     </div>
+
+    <div class="card">
+      <div class="message" id="cheerMessage">
+        Rocket & Luna believe in you!
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Pick an envelope when you save</h2>
+      <div class="envelope-grid" id="envelopeGrid"></div>
+    </div>
+
+    <div class="card">
+      <h2>Milestones</h2>
+      <div class="milestone"><span>🥉 $1,000</span><span id="m1000"></span></div>
+      <div class="milestone"><span>🥈 $2,500</span><span id="m2500"></span></div>
+      <div class="milestone"><span>🥇 $4,000</span><span id="m4000"></span></div>
+      <div class="milestone"><span>🏆 $5,000</span><span id="m5000"></span></div>
+    </div>
+
+    <div class="card">
+      <button class="pink" onclick="resetChallenge()">Reset My Challenge</button>
+    </div>
+
   </div>
 
-  <div class="card">
-    <h2>Tap an amount when you save it</h2>
-    <div class="grid" id="amountGrid"></div>
-  </div>
+  <div id="statsPage" style="display:none;">
 
-  <div class="card">
-    <h2>Milestones</h2>
-
-    <div class="milestone">
-      <span>🥉 $1,000</span>
-      <span id="m1000"></span>
+    <div class="card">
+      <h2>My Stats</h2>
+      <div class="stat-grid">
+        <div class="stat">Saved<strong id="statSaved">$0</strong></div>
+        <div class="stat">Remaining<strong id="statRemaining">$5,000</strong></div>
+        <div class="stat">Envelopes<strong id="statEnvelopes">0/100</strong></div>
+        <div class="stat">Percent<strong id="statPercent">0%</strong></div>
+        <div class="stat">Largest<strong id="statLargest">$0</strong></div>
+        <div class="stat">Average<strong id="statAverage">$0</strong></div>
+      </div>
     </div>
 
-    <div class="milestone">
-      <span>🥈 $2,500</span>
-      <span id="m2500"></span>
+    <div class="card">
+      <h2>Achievements</h2>
+      <div class="badges">
+        <div class="badge" id="b1">🌟 First Envelope</div>
+        <div class="badge" id="b100">💵 First $100</div>
+        <div class="badge" id="b500">💰 Saved $500</div>
+        <div class="badge" id="b25">✉️ 25 Envelopes</div>
+        <div class="badge" id="b2500">🏃 Halfway There</div>
+        <div class="badge" id="b5000">👑 $5,000 Champion</div>
+      </div>
     </div>
 
-    <div class="milestone">
-      <span>🥇 $4,000</span>
-      <span id="m4000"></span>
+    <div class="card">
+      <button class="pink" onclick="changeName()">Change My Name</button>
     </div>
 
-    <div class="milestone">
-      <span>🏆 $5,000</span>
-      <span id="m5000"></span>
-    </div>
-  </div>
-
-  <div class="card">
-    <button class="pink" onclick="resetChallenge()">Reset My Challenge</button>
   </div>
 
 </div>
@@ -234,108 +404,193 @@
 </footer>
 
 <script>
-  const goal = 5000;
-  const storageKey = "rocketLunaPersonalSavingsChallenge";
+const goal = 5000;
+const dataKey = "rocketLunaEnvelopeSavings";
+const nameKey = "rocketLunaSaverName";
 
-  const amounts = [];
-
-  for (let i = 0; i < 10; i++) {
-    for (let amt = 10; amt <= 100; amt += 10) {
-      amounts.push(amt);
-    }
+const amounts = [];
+for (let i = 0; i < 10; i++) {
+  for (let amount = 10; amount <= 100; amount += 10) {
+    amounts.push(amount);
   }
+}
 
-  function getData() {
-    const saved = localStorage.getItem(storageKey);
-    return saved ? JSON.parse(saved) : [];
+function getName() {
+  return localStorage.getItem(nameKey) || "";
+}
+
+function saveName() {
+  const name = document.getElementById("nameInput").value.trim();
+  if (!name) {
+    alert("Please enter your name.");
+    return;
   }
-
-  function saveData(data) {
-    localStorage.setItem(storageKey, JSON.stringify(data));
-  }
-
-  function toggleAmount(index) {
-    let data = getData();
-
-    if (data.includes(index)) {
-      data = data.filter(i => i !== index);
-      setCheer("No worries! Rocket & Luna are still cheering for you!");
-    } else {
-      data.push(index);
-      const amount = amounts[index];
-      setCheer(randomCheer(amount));
-    }
-
-    saveData(data);
-    render();
-  }
-
-  function randomCheer(amount) {
-    const cheers = [
-      `Rocket says: Great job saving $${amount}!`,
-      `Luna says: You are amazing!`,
-      `Rocket & Luna are so proud of you!`,
-      `Another step closer to $5,000!`,
-      `Small steps today, big freedom tomorrow!`,
-      `You did it! Another envelope saved!`,
-      `Luna says: Keep going, you’re doing great!`,
-      `Rocket says: That’s how champions save!`
-    ];
-
-    return cheers[Math.floor(Math.random() * cheers.length)];
-  }
-
-  function setCheer(text) {
-    document.getElementById("cheerMessage").innerText = text;
-  }
-
-  function renderGrid() {
-    const grid = document.getElementById("amountGrid");
-    grid.innerHTML = "";
-
-    const data = getData();
-
-    amounts.forEach((amount, index) => {
-      const btn = document.createElement("button");
-      btn.className = "amount" + (data.includes(index) ? " saved" : "");
-      btn.innerText = "$" + amount;
-      btn.onclick = () => toggleAmount(index);
-      grid.appendChild(btn);
-    });
-  }
-
-  function renderTotals() {
-    const data = getData();
-    const total = data.reduce((sum, index) => sum + amounts[index], 0);
-    const percent = Math.min(Math.round((total / goal) * 100), 100);
-    const remaining = Math.max(goal - total, 0);
-
-    document.getElementById("totalSaved").innerText = "$" + total.toLocaleString();
-    document.getElementById("percentText").innerText = percent + "% of $5,000";
-    document.getElementById("remainingText").innerText = "$" + remaining.toLocaleString() + " left to go!";
-    document.getElementById("progressBar").style.width = percent + "%";
-
-    document.getElementById("m1000").innerHTML = total >= 1000 ? "<span class='done'>✔ Done</span>" : "";
-    document.getElementById("m2500").innerHTML = total >= 2500 ? "<span class='done'>✔ Done</span>" : "";
-    document.getElementById("m4000").innerHTML = total >= 4000 ? "<span class='done'>✔ Done</span>" : "";
-    document.getElementById("m5000").innerHTML = total >= 5000 ? "<span class='done'>🎉 Complete</span>" : "";
-  }
-
-  function resetChallenge() {
-    const confirmReset = confirm("Reset your savings challenge?");
-    if (!confirmReset) return;
-
-    saveData([]);
-    setCheer("Fresh start! Rocket & Luna are ready!");
-    render();
-  }
-
-  function render() {
-    renderGrid();
-    renderTotals();
-  }
-
+  localStorage.setItem(nameKey, name);
+  document.getElementById("setupScreen").style.display = "none";
   render();
+}
+
+function changeName() {
+  localStorage.removeItem(nameKey);
+  document.getElementById("setupScreen").style.display = "flex";
+}
+
+function getData() {
+  const saved = localStorage.getItem(dataKey);
+  return saved ? JSON.parse(saved) : [];
+}
+
+function saveData(data) {
+  localStorage.setItem(dataKey, JSON.stringify(data));
+}
+
+function totalSaved() {
+  const data = getData();
+  return data.reduce((sum, index) => sum + amounts[index], 0);
+}
+
+function toggleEnvelope(index) {
+  let data = getData();
+  const name = getName() || "friend";
+
+  if (data.includes(index)) {
+    data = data.filter(i => i !== index);
+    setCheer(`No worries, ${name}. Rocket & Luna are still cheering for you!`);
+  } else {
+    data.push(index);
+    confetti();
+    setCheer(randomCheer(amounts[index], name));
+  }
+
+  saveData(data);
+  render();
+}
+
+function randomCheer(amount, name) {
+  const cheers = [
+    `🎉 Great job, ${name}! You saved $${amount}!`,
+    `🐶 Rocket is proud of you, ${name}!`,
+    `💗 Luna says you’re getting closer to $5,000!`,
+    `🐾 Another envelope saved! Keep going, ${name}!`,
+    `💰 Small steps today, big freedom tomorrow!`,
+    `⭐ You’re doing amazing, ${name}!`,
+    `🐶 Rocket says: That’s how champions save!`,
+    `💗 Luna says: One envelope at a time!`
+  ];
+  return cheers[Math.floor(Math.random() * cheers.length)];
+}
+
+function setCheer(text) {
+  document.getElementById("cheerMessage").innerText = text;
+}
+
+function renderEnvelopes() {
+  const grid = document.getElementById("envelopeGrid");
+  const data = getData();
+  grid.innerHTML = "";
+
+  amounts.forEach((amount, index) => {
+    const btn = document.createElement("button");
+    btn.className = "envelope" + (data.includes(index) ? " saved" : "");
+    btn.innerHTML = `<span>💌</span>$${amount}`;
+    btn.onclick = () => toggleEnvelope(index);
+    grid.appendChild(btn);
+  });
+}
+
+function renderTotals() {
+  const total = totalSaved();
+  const percent = Math.min(Math.round((total / goal) * 100), 100);
+  const remaining = Math.max(goal - total, 0);
+  const name = getName();
+
+  document.getElementById("welcomeText").innerText =
+    name ? `Welcome back, ${name}! Rocket & Luna are ready.` : "Small steps today, big freedom tomorrow.";
+
+  document.getElementById("totalSaved").innerText = "$" + total.toLocaleString();
+  document.getElementById("percentText").innerText = percent + "% of $5,000";
+  document.getElementById("remainingText").innerText = "$" + remaining.toLocaleString() + " left to go!";
+  document.getElementById("progressBar").style.width = percent + "%";
+
+  document.getElementById("m1000").innerHTML = total >= 1000 ? "<span class='done'>✔ Done</span>" : "";
+  document.getElementById("m2500").innerHTML = total >= 2500 ? "<span class='done'>✔ Done</span>" : "";
+  document.getElementById("m4000").innerHTML = total >= 4000 ? "<span class='done'>✔ Done</span>" : "";
+  document.getElementById("m5000").innerHTML = total >= 5000 ? "<span class='done'>🎉 Complete</span>" : "";
+
+  if (total >= 5000) {
+    setCheer(`🏆 YOU DID IT, ${name || "friend"}! Rocket & Luna are celebrating!`);
+  }
+}
+
+function renderStats() {
+  const data = getData();
+  const total = totalSaved();
+  const remaining = Math.max(goal - total, 0);
+  const percent = Math.min(Math.round((total / goal) * 100), 100);
+  const largest = data.length ? Math.max(...data.map(i => amounts[i])) : 0;
+  const average = data.length ? Math.round(total / data.length) : 0;
+
+  document.getElementById("statSaved").innerText = "$" + total.toLocaleString();
+  document.getElementById("statRemaining").innerText = "$" + remaining.toLocaleString();
+  document.getElementById("statEnvelopes").innerText = data.length + "/100";
+  document.getElementById("statPercent").innerText = percent + "%";
+  document.getElementById("statLargest").innerText = "$" + largest;
+  document.getElementById("statAverage").innerText = "$" + average;
+
+  unlock("b1", data.length >= 1);
+  unlock("b100", total >= 100);
+  unlock("b500", total >= 500);
+  unlock("b25", data.length >= 25);
+  unlock("b2500", total >= 2500);
+  unlock("b5000", total >= 5000);
+}
+
+function unlock(id, condition) {
+  document.getElementById(id).className = condition ? "badge unlocked" : "badge";
+}
+
+function showPage(page) {
+  document.getElementById("challengePage").style.display = page === "challenge" ? "block" : "none";
+  document.getElementById("statsPage").style.display = page === "stats" ? "block" : "none";
+
+  document.getElementById("challengeTab").className = page === "challenge" ? "active" : "";
+  document.getElementById("statsTab").className = page === "stats" ? "active" : "";
+}
+
+function resetChallenge() {
+  if (!confirm("Reset your savings challenge?")) return;
+  saveData([]);
+  setCheer("Fresh start! Rocket & Luna are ready!");
+  render();
+}
+
+function confetti() {
+  const colors = ["#ff4fa3", "#0627c9", "#ffd23f", "#ffffff", "#8ee4ff"];
+
+  for (let i = 0; i < 35; i++) {
+    const piece = document.createElement("div");
+    piece.className = "confetti";
+    piece.style.left = Math.random() * 100 + "vw";
+    piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+    piece.style.animationDuration = (1 + Math.random() * 1.2) + "s";
+    document.body.appendChild(piece);
+
+    setTimeout(() => piece.remove(), 2200);
+  }
+}
+
+function render() {
+  renderEnvelopes();
+  renderTotals();
+  renderStats();
+}
+
+window.onload = function() {
+  if (!getName()) {
+    document.getElementById("setupScreen").style.display = "flex";
+  }
+  render();
+};
 </script>
 
 </body>
